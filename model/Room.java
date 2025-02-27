@@ -50,11 +50,11 @@ public class Room {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Room Number: ").append(Integer.toString(this.number))
-          .append(" \n Building: ").append(this.building)
-          .append(" \n Room Type: ").append(type.toString())
-          .append(" \n Dimensions: ").append(this.dimensions)
-          .append(" \n Equipment: ").append(getEquipmentString())
-          .append(" \n Status: ").append(this.status);
+            .append(" \n Building: ").append(this.building)
+            .append(" \n Room Type: ").append(type.toString())
+            .append(" \n Dimensions: ").append(this.dimensions)
+            .append(" \n Equipment: ").append(getEquipmentString())
+            .append(" \n Status: ").append(this.status);
         return sb.toString();
     }
 }

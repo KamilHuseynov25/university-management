@@ -2,7 +2,6 @@ package model.person;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
 import model.Course;
 import util.Enums.StudentDegree;
 
@@ -68,18 +67,18 @@ public class Student extends Person {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Student{")
-          .append("id=").append(getId())
-          .append(", fullName='").append(getFullName()).append('\'')
-          .append(", dateOfBirth=").append(getDateOfBirth())
-          .append(", major='").append(major).append('\'')
-          .append(", semester=").append(semester)
-          .append(", type='").append(type).append('\'')
-          .append(", thesisTitle='").append(thesisTitle != null ? thesisTitle : "N/A").append('\'')
-          .append(", internshipCompleted=").append(internshipCompleted ? "Yes" : "No")
-          .append(", TA=").append(TA ? "Yes" : "No")
-          .append(", courses=").append(courses.size()).append(" courses")
-          .append(", GPAs=").append(GPAs.size()).append(" GPAs")
-          .append('}');
+            .append("id=").append(getId())
+            .append(", fullName='").append(getFullName()).append('\'')
+            .append(", dateOfBirth=").append(getDateOfBirth())
+            .append(", major='").append(major).append('\'')
+            .append(", semester=").append(semester)
+            .append(", type='").append(type).append('\'')
+            .append(", thesisTitle='").append(thesisTitle != null ? thesisTitle : "N/A").append('\'')
+            .append(", internshipCompleted=").append(internshipCompleted ? "Yes" : "No")
+            .append(", TA=").append(TA ? "Yes" : "No")
+            .append(", courses=").append(courses.size()).append(" courses")
+            .append(", GPAs=").append(GPAs.size()).append(" GPAs")
+            .append('}');
         return sb.toString();
     }
 }

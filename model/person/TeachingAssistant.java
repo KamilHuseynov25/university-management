@@ -1,7 +1,6 @@
 package model.person;
 
 import java.util.ArrayList;
-
 import model.Course;
 
 public class TeachingAssistant {
@@ -43,9 +42,9 @@ public class TeachingAssistant {
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
         sb.append(", supervisor=").append(supervisor != null ? supervisor.getFullName() : "N/A")
-          .append(", evaluationReview='").append(evaluation != null ? evaluation : "N/A").append('\'')
-          .append(", coursesAssisted=").append(coursesAssisted.size()).append(" courses assisted")
-          .append('}');
+            .append(", evaluationReview='").append(evaluation != null ? evaluation : "N/A").append('\'')
+            .append(", coursesAssisted=").append(coursesAssisted.size()).append(" courses assisted")
+            .append('}');
         return sb.toString();
     }
 }

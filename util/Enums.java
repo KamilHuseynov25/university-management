@@ -46,4 +46,42 @@ public class Enums {
         AUDITORIUM,
         LAB
     };
+    public enum DepartmentType {
+    HUMAN_RESOURCES("Human Resources"),
+    FINANCE("Finance"),
+    IT("Information Technology"),
+    MARKETING("Marketing"),
+    ENGINEERING("Engineering"),
+    STUDENT_ADMINISTRATION("Administration"),
+    LEGAL("Legal");
+
+    private final String displayName;
+
+    DepartmentType(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+}
+
+public enum BuildingNames{
+    A("A"),
+    B("B"),
+    C("C"),
+    D("D"),
+    E("E"),
+    L("L");
+
+    private final String displayName;
+
+    BuildingNames(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+}
 }

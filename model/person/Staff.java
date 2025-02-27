@@ -1,7 +1,6 @@
 package model.person;
 
 import java.time.LocalDate;
-
 import model.Room;
 
 public class Staff extends Person {
@@ -40,11 +39,11 @@ public class Staff extends Person {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString())
-          .append("\nStatus: ").append(status)
-          .append("\nPosition: ").append(position)
-          .append("\nOffice Number: ").append(office != null ? office : "N/A")
-          .append("\nDepartment: ").append(department)
-          .append("\nSalary: $").append(salary);
+            .append("\nStatus: ").append(status)
+            .append("\nPosition: ").append(position)
+            .append("\nOffice Number: ").append(office != null ? office : "N/A")
+            .append("\nDepartment: ").append(department)
+            .append("\nSalary: $").append(salary);
         return sb.toString();
     }
 }
