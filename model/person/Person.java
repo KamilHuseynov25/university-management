@@ -12,6 +12,7 @@ public abstract class Person {
     private final LocalDate dateOfBirth;
 
     protected Person(int id, String fullName, String address, String phone, String email, LocalDate dateOfBirth) {
+        validate(id, fullName, dateOfBirth, phone, email);
         this.id = id;
         this.fullName = fullName;
         this.address = address;
@@ -21,12 +22,51 @@ public abstract class Person {
     }
 
     protected Person(int id, String fullName, LocalDate dateOfBirth) {
+        validate(id, fullName, dateOfBirth);
         this.id = id;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
     }
 
-    // Getters
+    private void validate(int id, String fullName, LocalDate dateOfBirth ) {
+        try {
+            if (id < 0) {
+                throw new IllegalArgumentException("ID cannot be negative.");
+            }
+            if (fullName.contains("123456789/\\!@#$%^&*()_+={}[]|><,`~")) {
+                throw new IllegalArgumentException("Name cannot contain only letters");
+            }
+            if(dateOfBirth.getYear() > LocalDate.now().getYear()){
+                throw new IllegalArgumentException("Year cannot exceed the curent year ");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid input: " + e.getMessage());
+            throw e;
+        }
+    }
+    private void validate(int id, String fullName, LocalDate dateOfBirth, String phone, String email) {
+        try {
+            if (id < 0) {
+                throw new IllegalArgumentException("ID cannot be negative.");
+            }
+            if (fullName.contains("0-9/\\!@#$%^&*()_+={}[]|><,`~")) {
+                throw new IllegalArgumentException("Name cannot contain only letters");
+            }
+            if(dateOfBirth.getYear() > LocalDate.now().getYear()){
+                throw new IllegalArgumentException("Year cannot exceed the curent year ");
+            }
+            if (phone == null || phone.isEmpty() || phone.matches("[0-9\\s\\-()]+")) {
+                throw new  IllegalArgumentException("Phone number can't contain any letters");
+            }
+            if(email != null && email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")){
+                throw new  IllegalArgumentException("Mail is invalid");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid input: " + e.getMessage());
+            throw e;
+        }
+    }
+
     public int getId() { return id; }
     public String getFullName() { return fullName; }
     public String getAddress() { return address; }
@@ -38,7 +78,7 @@ public abstract class Person {
         Period period = Period.between(this.dateOfBirth, today);
         return period.getYears();
     }
-    // Setters
+    
     public void setAddress(String address) { this.address = address; }
     public void setPhone(String phone) { this.phone = phone; }
     public void setEmail(String email) { this.email = email; }
@@ -46,9 +86,9 @@ public abstract class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Person)) return false; // for subclasses
+        if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return id == person.id; // id is unique
+        return id == person.id;
     }
 
     @Override
@@ -64,4 +104,4 @@ public abstract class Person {
         sb.append("}");
         return sb.toString();
     }
-}    
+}

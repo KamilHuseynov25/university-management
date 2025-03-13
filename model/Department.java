@@ -18,13 +18,17 @@ public class Department {
     public float budget;
     public float expenses;
 
+    public Department(int departmentId, Enums.DepartmentType department, Building building, int numberOfEmployees, String email, float budget, float expenses) {
+        this.departmentId = departmentId;
+        this.department = department;
+        this.building = building;
+        setNumberOfEmployees(numberOfEmployees);
+        setEmail(email);
+        setBudget(budget);
+        setExpenses(expenses);
+    }
     public Boolean IsOverspending(){
-        float budg = this.budget;
-        float exp = this.expenses;
-        if(budg>=exp){
-            return false;
-        }
-        return true;
+        return getBudget()>getExpenses();
     }
     
     public float calculateDeficitOrSurplus() {

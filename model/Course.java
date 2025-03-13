@@ -1,9 +1,8 @@
 package model;
 
 import java.util.ArrayList;
-
-import model.person.Student;
 import model.person.Faculty;
+import model.person.Student;
 
 public class Course {
     private String title;
@@ -53,15 +52,15 @@ public class Course {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Course{")
-          .append("title='").append(title).append('\'')
-          .append(", description='").append(description).append('\'')
-          .append(", courseCode=").append(courseCode)
-          .append(", credits=").append(credits)
-          .append(", CRN=").append(CRN)
-          .append(", passingGrade=").append(passingGrade)
-          .append(", students=").append(students)
-          .append(", prerequisites=").append(prerequisites)
-          .append('}');
+            .append("title='").append(title).append('\'')
+            .append(", description='").append(description).append('\'')
+            .append(", courseCode=").append(courseCode)
+            .append(", credits=").append(credits)
+            .append(", CRN=").append(CRN)
+            .append(", passingGrade=").append(passingGrade)
+            .append(", students=").append(students)
+            .append(", prerequisites=").append(prerequisites)
+            .append('}');
         return sb.toString();
     }
 }
